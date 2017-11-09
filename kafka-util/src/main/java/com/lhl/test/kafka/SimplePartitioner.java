@@ -24,9 +24,13 @@ public class SimplePartitioner implements Partitioner {
         int numPartitions = partitions.size();
         String strKey = (String) key;
 
-        partition = Math.abs(Integer.parseInt(strKey) % numPartitions);
+        try {
+            partition = Math.abs(Integer.parseInt(strKey) % numPartitions);
+        } catch (NumberFormatException e) {
+            partition = Math.abs(strKey.hashCode() % numPartitions);
+        }
 
-        return 0;
+        return partition;
     }
 
     @Override

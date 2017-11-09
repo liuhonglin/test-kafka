@@ -11,7 +11,7 @@ public class Sender {
 
     public static void main(String[] args) {
 
-        String topic = "test2";
+        String topic = "test3";
 
         Properties properties = new Properties();
         properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "10.127.92.182:9092,10.127.92.182:9093,10.127.92.182:9094");
